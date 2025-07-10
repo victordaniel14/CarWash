@@ -1,0 +1,353 @@
+/* ---------------------- RESET BÁSICO ---------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------- TIPOGRAFÍA / BODY -------------------- */
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #222;
+}
+
+/* ---------------------- ENCABEZADO ------------------------ */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #3b4044;
+  color: #fff;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  width: 200px;
+}
+
+/* ------------- MENÚ DE NAVEGACIÓN ------------- */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: "";
+  position: relative;
+}
+
+.nav-toggle span::before {
+  top: -7px;
+}
+
+.nav-toggle span::after {
+  top: 4px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background 0.3s;
+}
+
+.nav-menu a:hover,
+.dropdown:hover > a {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Submenú */
+.dropdown {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #004a7c;
+  list-style: none;
+  min-width: 180px;
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+.submenu a {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+/* ------------------------ HERO ------------------------ */
+.hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  animation: deslizar 15s infinite;
+}
+
+.carousel img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+@keyframes deslizar {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-100%);
+  }
+  66% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ------------------ MISIÓN / VISIÓN / VALORES ------------------ */
+.about {
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.about article {
+  background: #f4f6f8;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.about h2 {
+  margin-bottom: 0.5rem;
+  color: #004a7c;
+}
+
+/* ------------------ FORMULARIO DE CONTACTO ------------------ */
+#contacto {
+  padding: 2rem;
+  background: #e9edf1;
+}
+
+#contacto form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+/* Botón */
+button[type="submit"] {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: #3b4044;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background: #5f0202;
+}
+
+/* ------------------- INFO DE CONTACTO ------------------- */
+.info-contacto {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 0.25rem;
+}
+
+.mapa iframe {
+  width: 100%;
+  min-height: 300px;
+  border: 0;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.redes {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.redes a {
+  color: #004a7c;
+}
+
+/* ---------------------- MARQUESINA --------------------- */
+marquee {
+  padding: 1rem;
+  background: #3b4044;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* ----------------------- FOOTER ------------------------ */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #3b4044;
+  color: #fff;
+}
+
+/* ------------------ RESPONSIVE (≤ 768 px) ------------------ */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #3b4044;
+    width: 200px;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+  }
+
+  /* Agrega la clase .show desde JS para abrir el menú */
+  .nav-menu.show {
+    transform: translateX(0);
+  }
+
+  .nav-menu li {
+    margin: 0;
+  }
+
+  /* Asegura que el carrusel no sea demasiado alto en móvil */
+  .carousel img {
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
+/* Sección de Servicios de Car Wash */
+.servicios-carwash {
+  background-color: #f9fbfc;
+  padding: 25px;
+  margin-top: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.servicios-carwash h3 {
+  color: #003366;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.servicios-carwash p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Formulario organizado */
+#formulario-servicios {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#formulario-servicios .grupo {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #c9ced4;
+}
+
+#formulario-servicios legend {
+  font-weight: bold;
+  color: #002244;
+  margin-bottom: 10px;
+}
+
+#formulario-servicios label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+#formulario-servicios select,
+#formulario-servicios input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 15px;
+  margin-top: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Botón de envío */
+#formulario-servicios button {
+  padding: 10px 15px;
+  background-color: #0059b3;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
+}
+
+#formulario-servicios button:hover {
+  background-color: #5f0202;
+}
+

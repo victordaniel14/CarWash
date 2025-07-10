@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Empresa</title>
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="estilos.css" />
+
+  <!-- Iconos (ej. Font Awesome) – opcional -->
+  <script
+    src="https://kit.fontawesome.com/a2b0c12345.js"
+    crossorigin="anonymous"
+    defer
+  ></script>
+</head>
+
+<body>
+  <!-- ========= ENCABEZADO ========= -->
+  <header>
+    <div class="branding">
+      <img src="Logo.png" class="logo" alt="Logo de Mi Empresa" />
+      <h1>Getsemani Car Wash</h1>
+    </div>
+
+    <!-- Botón hamburguesa (se muestra solo en móvil) -->
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <span></span>
+    </button>
+
+    <!-- Menú principal -->
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+
+        <!-- Elemento con submenú desplegable -->
+        <li class="dropdown">
+          <a href="servicios.html">Servicios ▾</a>
+          <ul class="submenu">
+            <li><a href="#">Consultoría</a></li>
+            <li><a href="#">Desarrollo</a></li>
+            <li><a href="#">Soporte</a></li>
+          </ul>
+        </li>
+
+        <li><a href="galeria.html">Galería</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========= CONTENIDO PRINCIPAL ========= -->
+  <main>
+    <!-- Carrusel / Hero -->
+    <section class="hero">
+      <div class="carousel">
+        <img src="foto1.png" alt="Proyecto destacado 1" />
+        <img src="foto2.png" alt="Proyecto destacado 2" />
+        <img src="foto3.png" alt="Proyecto destacado 3" />
+      </div>
+    </section>
+
+    <!-- Misión · Visión · Valores -->
+    <section class="about">
+      <article id="mision">
+        <h2>Misión</h2>
+        <p>
+          Brindar un servicio de lavado de autos de alta calidad, eficiente y comprometido con el medio ambiente, fundamentado en valores cristianos como el respeto, la responsabilidad, la honestidad y el amor al servicio. Nos esforzamos por cuidar cada vehículo como si fuera nuestro, ofreciendo atención personalizada y actuando con transparencia en todo momento. Nuestro propósito va más allá de un simple lavado: queremos generar un impacto positivo en la vida de nuestros clientes, colaboradores y comunidad, sirviendo con excelencia y reflejando el amor de Dios en cada detalle de nuestro trabajo.
+        </p>
+      </article>
+
+      <article id="vision">
+        <h2>Visión</h2>
+        <p>
+          Ser una empresa líder en el servicio de limpieza y cuidado de vehículos, reconocida no solo por la excelencia en nuestros procesos, sino también por reflejar valores cristianos en cada acción. Aspiramos a transformar la industria del car wash mediante un servicio que combine profesionalismo, respeto por el medio ambiente y atención humana basada en principios de fe, honestidad, integridad y amor al prójimo. Queremos ser una luz en la comunidad, mostrando que se puede servir con calidad y a la vez con un corazón dispuesto a ayudar y construir.
+        </p>
+      </article>
+
+      <article id="valores">
+        <h2>Valores</h2>
+        <ul>
+          <li>Innovación</li>
+          <li>Calidad</li>
+          <li>Responsabilidad</li>
+          <li>Trabajo en equipo</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section id="contacto">
+      <h2>Contáctanos</h2>
+
+      <form id="formulario-contacto" action="#" method="post">
+        <!-- Nombre -->
+        <div class="campo">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required />
+        </div>
+
+        <!-- Contraseña -->
+        <div class="campo">
+          <label for="clave">Contraseña:</label>
+          <input type="password" id="clave" name="clave" required />
+        </div>
+
+        <!-- Correo -->
+        <div class="campo">
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <!-- Comentarios -->
+        <div class="campo">
+          <label for="comentarios">Comentarios:</label>
+          <textarea id="comentarios" name="comentarios"></textarea>
+        </div>
+
+        <!-- Género -->
+        <fieldset class="campo">
+          <legend>Género</legend>
+          <label><input type="radio" name="sexo" value="femenino" /> Femenino</label>
+          <label><input type="radio" name="sexo" value="masculino" /> Masculino</label>
+          <label><input type="radio" name="sexo" value="otro" /> Otro</label>
+        </fieldset>
+
+        <!-- Intereses -->
+        <fieldset class="campo">
+          <legend>Intereses</legend>
+          <label><input type="checkbox" name="intereses" value="desarrollo" /> Desarrollo</label>
+          <label><input type="checkbox" name="intereses" value="consultoria" /> Consultoría</label>
+          <label><input type="checkbox" name="intereses" value="soporte" /> Soporte</label>
+        </fieldset>
+
+        <!-- Ciudad -->
+        <div class="campo">
+          <label for="ciudad">Departamento / Ciudad:</label>
+          <select id="ciudad" name="ciudad">
+            <option value="">Seleccione...</option>
+            <option value="Ahuachapán">Ahuachapán</option>
+            <option value="Cabañas">Cabañas</option>
+            <option value="Chalatenango">Chalatenango</option>
+            <option value="Cuscatlán">Cuscatlán</option>
+            <option value="La-Libertad">La Libertad</option>
+            <option value="La-Paz">La Paz</option>
+            <option value="La-Unión">La Unión</option>
+            <option value="Morazán">Morazán</option>
+            <option value="San-Miguel">San Miguel</option>
+            <option value="San-Salvador">San Salvador</option>
+            <option value="San-Vicente">San Vicente</option>
+            <option value="Santa-Ana">Santa Ana</option>
+            <option value="sonsonate">Sonsonate</option>
+            <option value="Usulután">Usulután</option>
+          </select>
+        </div>
+
+        <!-- Teléfono -->
+        <div class="campo">
+          <label for="telefono">Teléfono:</label>
+          <input type="number" id="telefono" name="telefono" />
+        </div>
+
+        <!-- Fecha -->
+        <div class="campo">
+          <label for="fecha">Fecha de contacto:</label>
+          <input type="date" id="fecha" name="fecha" />
+        </div>
+
+        <!-- Botón enviar -->
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <!-- Publicación y Formulario de Servicios de Car Wash -->
+<section class="servicios-carwash">
+  <h3>🚘 Servicios que ofrecemos en Getsemaní Car Wash</h3>
+  <p>
+    En Getsemaní Car Wash cuidamos tu vehículo con excelencia, rapidez y atención basada en valores cristianos. Selecciona los servicios que deseas a continuación:
+  </p>
+
+  <form id="formulario-servicios" action="#" method="post">
+    <!-- Grupo: Selección de Servicios -->
+    <fieldset class="grupo">
+      <legend>🧼 Servicios disponibles</legend>
+      <label><input type="checkbox" name="servicios" value="lavado-exterior-interior" /> Lavado exterior e interior</label>
+      <label><input type="checkbox" name="servicios" value="lavado-motor" /> Lavado de motor</label>
+      <label><input type="checkbox" name="servicios" value="encerado" /> Encerado profesional</label>
+      <label><input type="checkbox" name="servicios" value="pulido" /> Pulido de carrocería</label>
+      <label><input type="checkbox" name="servicios" value="tapiceria" /> Limpieza de tapicería</label>
+      <label><input type="checkbox" name="servicios" value="aspirado" /> Aspirado profundo</label>
+      <label><input type="checkbox" name="servicios" value="desinfeccion" /> Desinfección con vapor</label>
+      <label><input type="checkbox" name="servicios" value="express" /> Lavado exprés</label>
+    </fieldset>
+
+    <!-- Grupo: Tipo de vehículo -->
+    <fieldset class="grupo">
+      <legend>🚗 Tipo de vehículo</legend>
+      <select name="vehiculo" required>
+        <option value="">Seleccione su tipo de vehículo</option>
+        <option value="sedan">Sedán</option>
+        <option value="suv">SUV</option>
+        <option value="camioneta">Camioneta</option>
+        <option value="pickup">Pickup</option>
+        <option value="motocicleta">Motocicleta</option>
+      </select>
+    </fieldset>
+
+    <!-- Grupo: Fecha preferida -->
+    <fieldset class="grupo">
+      <legend>📅 Fecha preferida</legend>
+      <input type="date" name="fecha_servicio" required />
+    </fieldset>
+
+    <!-- Botón de envío -->
+    <button type="submit">Solicitar Servicio</button>
+  </form>
+</section>
+
+    <!-- Información de contacto + mapa -->
+    <aside class="info-contacto">
+      <h3>Información de contacto</h3>
+      <p><strong>Teléfono:</strong> +503 7523 9173</p>
+      <p><strong>Email:</strong> GetsemaniCarWash@miempresa.com</p>
+      <p><strong>Horario:</strong> L-V | 07:00-3:00</p>
+
+      <!-- Google Maps iframe -->
+
+      <!-- Redes sociales -->
+      <div class="redes">
+        <a href="#" aria-label="Facebook"><i class="https://www.facebook.com/?locale=es_LA"></i></a>
+        <a href="#" aria-label="Twitter"><i class="https://x.com/?lang=es"></i></a>
+        <a href="#" aria-label="Instagram"><i class="https://www.instagram.com/"></i></a>
+      </div>
+    </aside>
+
+    <!-- Marquesina -->
+    <marquee behavior="scroll" direction="left">
+      Victor Daniel Barillas Hernández | 2° Año | Sección: "A" | Fecha:
+      25/06/2025
+    </marquee>
+  </main>
+
+  <!-- ========= PIE DE PÁGINA ========= -->
+  <footer>
+    <p>&copy; 2025 Mi Empresa. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts (carrusel y validaciones) -->
+  <script src="js/carrusel.js" defer></script>
+  <script src="js/validaciones.js" defer></script>
+</body>
+</html>
